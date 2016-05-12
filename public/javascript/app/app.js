@@ -14,22 +14,28 @@
                 // templateUrl: 'home.html'
             })
 
-        .state('authenticated', {
-            url: '/authenticated',
-            templateUrl: 'partial-authenticated.html',
-            resolve: {
-                // controller will not be loaded until $requireAuth resolves
-                // Auth refers to our $firebaseAuth wrapper in the example above
-                "currentAuth": ["$firebaseAuth", function ($firebaseAuth) {
-                    // $requireAuth returns a promise so the resolve waits for it to complete
-                    var ref = new Firebase(firebaseUrl);
-                    var authObj = $firebaseAuth(ref);
+            .state('orders', {
+                url: '/orderAhead',
+                templateUrl: 'orderAhead.html'
+               
+            })
 
-                    return authObj.$requireAuth();
-                }]
-            }
+            .state('authenticated', {
+                url: '/authenticated',
+                templateUrl: 'partial-authenticated.html',
+                resolve: {
+                    // controller will not be loaded until $requireAuth resolves
+                    // Auth refers to our $firebaseAuth wrapper in the example above
+                    "currentAuth": ["$firebaseAuth", function ($firebaseAuth) {
+                        // $requireAuth returns a promise so the resolve waits for it to complete
+                        var ref = new Firebase(firebaseUrl);
+                        var authObj = $firebaseAuth(ref);
+
+                        return authObj.$requireAuth();
+                    }]
+                }
+            });
         });
-    });
 
 
 })();

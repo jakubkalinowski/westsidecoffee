@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- If IE use the latest rendering engine -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Set the page to the width of the device and set the zoon level -->
+        <meta name="viewport" content="width = device-width, initial-scale = 1">
+
+        <title>Our Store</title>
+        <!-- Link the CSS files-->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- <link rel="stylesheet" href="css/custom.css"> -->
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <!-- Social Media Buttons (Font-Awesome)-->
+        <!-- <link rel="stylesheet" href="font-awesome-4.6.1/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        
+        <!-- Start of Custom style-->
+        <style>
+            /*Allign logo in the center*/          
+            /*.img-content {
+                position: absolute;
+                top: 50%;
+                left:50%;
+                transform: translate(-50%,-20%);
+            }*/
+
+            body {
+                background:#996633;
+            }
+
+            /* Entire navbar*/
+            .navbar {
+                background:#996633;
+                border: none;
+            }
+
+            /* Text border for Become a Member*/
+            .text-border {
+                background: transparent;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+
+            /* Video container */
+           .video-container-sizer {
+                position: relative;
+                overflow: hidden;
+                margin-left: -15px;
+                margin-right: -15px;
+                min-height: 380px;
+                max-height:550px;
+                margin-top: 0px;
+            }
+
+            
+            /*Footer*/
+            footer .navbar{
+                height: 150px;
+                /*left:40%;*/ 
+            }
+
+            /* Footer Columns */
+            .row {
+                color: white;
+                position: relative;
+                margin-top: 50px; 
+            }
+
+            .footer-text {
+                color: white;
+            }
+
+            /* centered columns styles */
+            .row-centered {
+                text-align:center;
+                padding-bottom: 10px;
+            }
+
+            .col-centered {
+                display:inline-block;
+                float:none;
+                /* reset the text-align */
+                text-align:center;
+                /* inline-block space fix */
+                margin-right:-4px;
+            }
+
+            /* Address text*/
+            .address-text{
+                color: white;
+            }
+
+            /*Horizontal divider*/
+            .hr-div {
+                width:60%;
+            }
+            .horiz-div{
+                width:100%;
+            }
+
+            /* Social media text*/
+            .botton-icons {
+                color: white;
+                text-align: center;
+            }
+
+            /*Copyright*/
+            #copyright-text {
+                color: white;
+                text-align: center;
+            }
+
+            /* Social media buttons*/
+            .social {
+                margin: 0;
+                padding: 0;
+            }
+
+            .social ul {
+                margin: 0;
+                padding: 5px;
+            }
+
+            .social ul li {
+                margin: 5px;
+                list-style: none outside none;
+                display: inline-block;
+            }
+
+            .social i {
+                width: 40px;
+                height: 40px;
+                color: white;
+                color: #FFF;
+                /*background-color: #909AA0;*/
+                font-size: 18px;
+                text-align:center;
+                padding-top: 12px;
+                border-radius: 50%;
+                -moz-border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -o-border-radius: 50%;
+                transition: all ease 0.3s;
+                -moz-transition: all ease 0.3s;
+                -webkit-transition: all ease 0.3s;
+                -o-transition: all ease 0.3s;
+                -ms-transition: all ease 0.3s;
+            }
+
+            .social i:hover {
+                color: #000;
+                text-decoration: none;
+                transition: all ease 0.3s;
+                -moz-transition: all ease 0.3s;
+                -webkit-transition: all ease 0.3s;
+                -o-transition: all ease 0.3s;
+                -ms-transition: all ease 0.3s;
+            }
+
+            .store-header {
+                margin-top: 100px;
+                color: white;
+                text-align: center;
+            }
+
+            .thumbnail {
+                height: 400px;
+            }
+
+            .thumbnail img {
+                width: auto;
+                height: 200px;
+            }
+
+            .thumbnail .caption {
+                padding-top: 0px;
+                text-align: center;
+            }
+
+
+        </style><!-- End of Custom style-->
+        
+    </head> <!-- End of Head-->
+
+    <body><!-- Start Body-->
+        
+        <!--Main body container -->
+        <div class="container-fluid">
+                        
+            <!--Start of NavBar-->
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                
+                <div class="container-fluid">
+                    
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <!--To hode info from screen readers-->
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--3 bars drawn inside of the expand button-->
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        
+                        <!-- Text Logo-->
+                        <a class="navbar-brand" href="index.html">Westside Coffee Co.</a>
+                        
+                        <!--Logo Icon-->
+                        <!-- <img class="img-content" href="index.html" src="images/logoIcon.png"/> -->
+                    </div> <!-- End of navbar-header-->
+
+
+                    <!-- Start navbar-collapse ... Collect items for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- <li class="active"><a href="#">Order Ahead <span class="sr-only">(current)</span></a></li> -->
+                            
+                            <!-- <li><a href="#">Order Ahead <span class="sr-only">(current)</span></a></li> -->
+                            
+                            <li class="text-border"><a href="#">Order Ahead</a></li>
+                            <li><a href="store.html">Store</a></li>
+                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Become a Member</a></li>
+                            <li><a href="#">Login</a></li>
+                        </ul>
+                    </div><!-- End of navbar-collapse -->
+
+                </div> <!--End of container-fluid-->
+
+            </nav> <!-- End of NavBar-->
+
+            
+        </div><!-- Close main body container-->
+
+        <h1 class="store-header">Our Store</h1>
+        
+        <div class="container-fluid">
+        <div class="store-items">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 col-lg-4">
+
+                    <!-- Column 1 / Item 1-->
+                    <div class="thumbnail">
+                        <img src="images/coffeemug.jpg" alt="coffeemug">
+                        <div class="caption">
+                            <h3>Coffee Makes Me Poop</h3>
+                            <p>
+                                Size: 12oz
+                                <br>Color: Brown
+                                <br>Price: $5.99
+                            </p>
+                            <p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                    <input type="hidden" name="cmd" value="_s-xclick">
+                                    <input type="hidden" name="hosted_button_id" value="ZACCEPB5RAD9S">
+                                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                </form>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 / Item 2-->
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4">
+                    <div class="thumbnail">
+                        <img src="images/coffeemug2.jpg" alt="coffeemug2">
+                        <div class="caption">
+                            <h3>Cookie Monster</h3>
+                            <p> 
+                                Size: 12oz
+                                <br>Color: White
+                                <br>Price: $7.99
+                            </p>
+                            <p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="PG9DGCTT8KQRE">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                </form>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3 / Item 3-->
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4">
+                    <div class="thumbnail">
+                        <img src="images/coffeemug3.jpg" alt="coffeemug3">
+                        <div class="caption">
+                            <h3>Battery Display</h3>
+                            <p> 
+                                <br>Size: 12oz
+                                <br>Color: Black
+                                <br>Price: $7.99
+                            </p>
+                            <p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="8TP4EHVUSVCYL">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                </form>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 4 / Item 4-->
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4">
+                    <div class="thumbnail">
+                        <img src="images/coffeemug4.jpg" alt="coffeemug4">
+                        <div class="caption">
+                            <h3>Electric Coffee Mug</h3>
+                            <p>
+                                <br>Size: 16oz
+                                <br>Color: Black
+                                <br>Price: $13.99
+                            </p>
+                            <p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="BGHEDSG3TCUDE">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                </form>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+
+
+                <!-- <ul>
+                        <li><img src="images/coffeemug.jpg"></li>
+                        <li><h4>Coffee Mug</h4></li>
+                        <li><h5>Purchase for $7.99</h5></li>
+
+                        <li><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="H7AXNL2USC79A">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form></li>
+                    </ul>
+            </div> -->
+
+
+
+        <!-- Horizontal divider--> 
+            <hr class="horiz-div">
+
+        <!--Bottom body-->
+        <div>
+            <div class="row row-centered">
+
+                <!-- Column 1-->
+                <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 col-centered">  
+                    
+                    <!-- Sub-column 1-->
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5 col-centered">
+                        <h3>Company</h3>
+                        <br>
+                        
+                            <a class="footer-text" href="#">About</a><br>
+                            <a class="footer-text" href="#">Careers</a><br>
+                            <a class="footer-text" href="#">Contact Us</a><br>
+                            <a class="footer-text" href="#">Suggestions</a>
+                        
+                    </div>
+
+                    <!-- Sub-column 2-->
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-7 col-centered">
+                        <h3>Other</h3>
+                        <br>
+                        
+                            <a class="footer-text" href="#">Newsletter</a><br>
+                            <a class="footer-text" href="#">Santa Cruz Events</a><br>
+                            <a class="footer-text" href="#">Surfing Conditions</a><br>
+                            <a class="footer-text" href="#">Santa Cruz Weather</a>
+                        
+                    </div>
+                </div> <!--End of Column 2-->
+            </div> <!-- End of Row-->
+            
+            <!-- Column 1-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-centered">  
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12752.17813920987!2d-122.0447056!3d36.9609932!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4f17c003c159bfdf!2sWestside+Coffee+Co!5e0!3m2!1sen!2sus!4v1461855826032" width="350" height="120" frameborder="1" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="address-text">
+                    <h5>We are located at</h5>
+                    <p>849 Almar Ave. #H<br>Santa Cruz, CA 95060</p>
+                </div>
+                <!-- Horizontal divider--> 
+                <hr class="hr-div">
+            </div>
+
+
+            <!-- Bottom Icons-->
+            <div class="botton-icons">
+                <h3>Join Us On</h3>
+
+                <div class="social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-lg fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-lg fa-pinterest"></i></a></li>
+                        <li><a href="#"><i class="fa fa-lg fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-lg fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+
+            </div><!-- End of Bottom Icons-->
+
+        </div> <!-- End of Bottom Body-->
+
+    </body><!-- End of Body-->
+    
+    
+
+    <!--Start footer-->
+    <footer>
+            <p id="copyright-text"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Copyright Westside Coffee Co.</p>
+    </footer> <!-- End of Footer-->
+
+    <!-- Latest jQuery file (goes above the JS file) (source: https://developers.google.com/speed/libraries/#jquery)-->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Add Firebase-->
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <!-- If IE use the latest rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Set the page to the width of the device and set the zoon level -->
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+
+    <title>Westside Coffee Co.</title>
+    <!-- Link the CSS files-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/custom.css"> -->
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <!-- Social Media Buttons (Font-Awesome)-->
+    <!-- <link rel="stylesheet" href="font-awesome-4.6.1/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+        
+    <!-- Start of Custom style-->
+    <style>
+
+            body {
+                background:#996633;
+            }
+
+            /* Entire navbar*/
+            .navbar {
+                background: transparent;
+                border: none;
+            }
+
+            /* Text border for Become a Member*/
+            .text-border {
+                background: transparent;
+                border: 1px solid white;
+                border-radius: 5px;
+            }	
+           
+            /*Footer*/
+            footer .navbar{
+                height: 150px;
+                /*left:40%;*/ 
+
+            }
+
+            /* Footer Columns */
+            .row {
+                color: white;
+                position: relative;
+            }
+
+            .footer-text {
+                color: white;
+            }
+
+            /* centered columns styles */
+            .row-centered {
+                text-align:center;
+                padding-bottom: 10px;
+            }
+
+            .col-centered {
+                display:inline-block;
+                float:none;
+                /* reset the text-align */
+                text-align:center;
+                /* inline-block space fix */
+                margin-right:-4px;
+            }
+
+            /* Address text*/
+            .address-text{
+                color: white;
+            }
+
+            /*Horizontal divider*/
+            .hr-div {
+                width:60%;
+            }
+            .horiz-div{
+                width:100%;
+            }
+
+            /* Social media text*/
+            .botton-icons {
+                color: white;
+                text-align: center;
+            }
+
+            /*Copyright*/
+            #copyright-text {
+                color: white;
+                text-align: center;
+            }
+
+            /* Social media buttons*/
+            .social {
+                margin: 0;
+                padding: 0;
+            }
+
+            .social ul {
+                margin: 0;
+                padding: 5px;
+            }
+
+            .social ul li {
+                margin: 5px;
+                list-style: none outside none;
+                display: inline-block;
+            }
+
+            .social i {
+                width: 40px;
+                height: 40px;
+                color: white;
+                color: #FFF;
+                /*background-color: #909AA0;*/
+                font-size: 18px;
+                text-align:center;
+                padding-top: 12px;
+                border-radius: 50%;
+                -moz-border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -o-border-radius: 50%;
+                transition: all ease 0.3s;
+                -moz-transition: all ease 0.3s;
+                -webkit-transition: all ease 0.3s;
+                -o-transition: all ease 0.3s;
+                -ms-transition: all ease 0.3s;
+            }
+
+            .social i:hover {
+                color: #000;
+                text-decoration: none;
+                transition: all ease 0.3s;
+                -moz-transition: all ease 0.3s;
+                -webkit-transition: all ease 0.3s;
+                -o-transition: all ease 0.3s;
+                -ms-transition: all ease 0.3s;
+            }
+
+            #login-modal .modal-dialog {
+    			width: 350px;
+			}
+
+			#login-modal input[type=text], input[type=password] {
+    			margin-top: 10px;
+			}
+
+		#div-lost-msg,
+		#div-register-msg {
+		    border: 1px solid #dadfe1;
+		    height: 30px;
+		    line-height: 28px;
+		    transition: all ease-in-out 500ms;
+		}
+
+		#div-login-msg.success,
+		#div-lost-msg.success,
+		#div-register-msg.success {
+		    border: 1px solid #68c3a3;
+		    background-color: #c8f7c5;
+		}
+
+		#div-login-msg.error,
+		#div-lost-msg.error,
+		#div-register-msg.error {
+		    border: 1px solid #eb575b;
+		    background-color: #ffcad1;
+		}
+
+		#icon-login-msg,
+		#icon-lost-msg,
+		#icon-register-msg {
+		    width: 30px;
+		    float: left;
+		    line-height: 28px;
+		    text-align: center;
+		    background-color: #dadfe1;
+		    margin-right: 5px;
+		    transition: all ease-in-out 500ms;
+		}
+
+		#icon-login-msg.success,
+		#icon-lost-msg.success,
+		#icon-register-msg.success {
+		    background-color: #68c3a3 !important;
+		}
+
+		#icon-login-msg.error,
+		#icon-lost-msg.error,
+		#icon-register-msg.error {
+		    background-color: #eb575b !important;
+		}
+
+		#img_logo {
+		    max-height: 100px;
+		    max-width: 100px;
+		}
+
+		/* #########################################
+		   #    override the bootstrap configs     #
+		   ######################################### */
+
+		.modal-backdrop.in {
+		    filter: alpha(opacity=50);
+		    opacity: .8;
+		}
+
+		.modal-content {
+		    background-color: #ececec;
+		    border: 1px solid #bdc3c7;
+		    border-radius: 0px;
+		    outline: 0;
+		}
+
+		.modal-header {
+		    min-height: 16.43px;
+		    padding: 15px 15px 15px 15px;
+		    border-bottom: 0px;
+		}
+
+		.modal-body {
+		    position: relative;
+		    padding: 5px 15px 5px 15px;
+		}
+
+		.modal-footer {
+		    padding: 15px 15px 15px 15px;
+		    text-align: left;
+		    border-top: 0px;
+		}
+
+		.checkbox {
+		    margin-bottom: 0px;
+		}
+
+		.btn {
+		    border-radius: 0px;
+		}
+
+		.btn:focus,
+		.btn:active:focus,
+		.btn.active:focus,
+		.btn.focus,
+		.btn:active.focus,
+		.btn.active.focus {
+		    outline: none;
+		}
+
+		.btn-lg, .btn-group-lg>.btn {
+		    border-radius: 0px;
+		}
+
+		.btn-link {
+		    padding: 5px 10px 0px 0px;
+		    color: #95a5a6;
+		}
+
+		.btn-link:hover, .btn-link:focus {
+		    color: #2c3e50;
+		    text-decoration: none;
+		}
+
+		.glyphicon {
+		    top: 0px;
+		}
+
+		.form-control {
+		  border-radius: 0px;
+		}
+
+	</style><!-- End of Custom style-->
+        
+</head> <!-- End of Head-->
+
+<body>
+	<div class="container">
+	<div class="panel panel-default">
+  	<!-- Default panel contents -->
+  	<div class="panel-heading">Coffee</div>
+
+  	<!-- Table -->
+  	
+<!-- <div class="container"> -->
+  <h2>Coffee Menu</h2>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Items</th>
+        <th>Sizes</th>
+        <th>Prices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Esspresso</td>
+        <td>12oz/16oz/20oz</td>
+        <td>$3.00/$3.25/$3.50</td>
+      </tr>
+      <tr>
+        <td>Capuccino</td>
+        <td>8oz/10oz/12oz</td>
+        <td>$2.25/$2.50/$2.75</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+	<!-- </div> -->
+
+	<div class="panel panel-default">
+  	<!-- Default panel contents -->
+  	<div class="panel-heading">Bagels</div>
+
+  	<!-- Table -->
+  	<table class="table">
+    ...
+  	</table>
+	</div>
+	</div>
+</body>
+
+<!--Start footer-->
+    <footer>
+            <p id="copyright-text"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Copyright Westside Coffee Co.</p>
+    </footer> <!-- End of Footer-->
+
+    <!-- Latest jQuery file (goes above the JS file) (source: https://developers.google.com/speed/libraries/#jquery)-->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Firebase connection-->
+    <script type="text/javascript" src="js/database.js"></script>
+    <!-- Add Firebase-->
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+</html>
+

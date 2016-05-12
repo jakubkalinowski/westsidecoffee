@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	        <meta charset="utf-8">
+        <!-- If IE use the latest rendering engine -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Set the page to the width of the device and set the zoon level -->
+        <meta name="viewport" content="width = device-width, initial-scale = 1">
+
+        <title>Westside Coffee Co.</title>
+        <!-- Link the CSS files-->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- <link rel="stylesheet" href="css/custom.css"> -->
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <!-- Social Media Buttons (Font-Awesome)-->
+        <!-- <link rel="stylesheet" href="font-awesome-4.6.1/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        
+
+        <!-- Start of Custom style-->
+        <style>
+            /*--Login style--*/
+
+
+            
+            body {
+                padding-top: 40px;
+                padding-bottom: 40px;
+                background-color: #ffffff;
+            }
+            
+            .centered-form{
+                margin-top: 60px;
+            }
+
+            .centered-form .panel{
+                background: rgba(255, 255, 255, 0.8);
+                box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+            }
+
+
+            /*--End of Login style--*/
+            </style>
+	</head>
+
+	<body>
+		<script src="js/frontpage.js"></script>
+
+        <div class="container-fluid">
+
+    <!-- Sign up / Register -->
+    <div class="container">
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <div class="panel panel-default">
+                
+                <div class="panel-heading">
+                    <h3 class="panel-title">Become a member with Westside Coffee Co.</h3>
+                </div>
+                
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                </div>
+                            </div>
+                        </div>
+                        <a href="main.html">
+                        <input type="submit" value="Submit" class="btn btn-info btn-block" id="UserSubmit" onclick="submitUserInformation()"></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Sign Up / Registration-->
+
+        <!-- Link the JS files (They should always be at the bottom Dustin!)-->
+        <script type="text/javascript" src="js/signup.js"></script>
+
+        <!-- Latest jQuery file (goes above the JS file) (source: https://developers.google.com/speed/libraries/#jquery)-->
+        <script src="js/jquery-1.12.1.min.js"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <!-- Add Firebase-->
+        <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+        <script type="text/javascript" src="js/database.js"></script>
+
+	</body>
+</html>

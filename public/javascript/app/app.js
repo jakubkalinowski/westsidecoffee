@@ -20,6 +20,12 @@
                
             })
 
+            .state('store', {
+                url: '/store',
+                templateUrl: 'store.html'
+               
+            })
+
             .state('authenticated', {
                 url: '/authenticated',
                 templateUrl: 'partial-authenticated.html',

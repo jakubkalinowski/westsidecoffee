@@ -28,6 +28,59 @@
                 transform: translate(-50%,-20%);
             }*/
 
+            /*--Login style--*/
+            #login-dp{
+                min-width: 250px;
+                padding: 14px 14px 0;
+                overflow:hidden;
+                background-color:rgba(0,0,0,0.6);
+            }
+            #login-dp .help-block{
+                font-size:12px 
+                color: white;   
+            }
+            #login-dp .bottom{
+                background-color:rgba(0,0,0,0.6);
+                border-top:1px solid #ddd;
+                clear:both;
+                padding:14px;
+            }
+            #login-dp .social-buttons{
+                margin:12px 0    
+            }
+            #login-dp .social-buttons a{
+                width: 49%;
+            }
+            #login-dp .form-group {
+                margin-bottom: 10px;
+            }
+            .btn-fb{
+                color: #fff;
+                background-color:#3b5998;
+            }
+            .btn-fb:hover{
+                color: #fff;
+                background-color:#496ebc 
+            }
+            .btn-tw{
+                color: #fff;
+                background-color:#55acee;
+            }
+            .btn-tw:hover{
+                color: #fff;
+                background-color:#59b5fa;
+            }
+            @media(max-width:768px){
+                #login-dp{
+                    background-color: inherit;
+                    color: #fff;
+                }
+                #login-dp .bottom{
+                    background-color: inherit;
+                    border-top:0 none;
+                }
+            }
+
             body {
                 background:#996633;
             }
@@ -182,6 +235,8 @@
             }
 
 
+
+
         </style><!-- End of Custom style-->
         
     </head> <!-- End of Head-->
@@ -222,7 +277,7 @@
                             
                             <!-- <li><a href="#">Order Ahead <span class="sr-only">(current)</span></a></li> -->
                             
-                            <li class="text-border"><a href="#">Order Ahead</a></li>
+                            <li class="text-border"><a href="orderAhead.html">Order Ahead</a></li>
                             <li><a href="store.html">Store</a></li>
                             
                             <li class="dropdown">
@@ -235,8 +290,45 @@
                                     <li><a href="#">Separated link</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Become a Member</a></li>
-                            <li><a href="#">Login</a></li>
+                            <li><a href="#" id="signup" data-toggle="modal" data-target="#myModal"> Become a Member</a></li>
+                            <!-- Login-->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login</a>
+                                <ul id="login-dp" class="dropdown-menu">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Login via
+                                                <div class="social-buttons" ng-controller="loginController as vm">
+                                                    <a href="#" class="btn btn-fb" ng-click="mainVm,navigationTo('authenticated')"><i class="fa fa-facebook"></i> Facebook</a>
+                                                    <a href="#" class="btn btn-tw" ng-click="vm.googleLogin()" ng-show="!vm.isLoggedIn"><i class="fa fa-twitter"></i> Twitter</a>
+                                                </div>
+                                                or
+                                                <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                    <div class="form-group">
+                                                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                                        <input id="login-email" type="email" class="form-control" placeholder="Email address" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                        <input id="login-password" type="password" class="form-control" placeholder="Password" required>
+                                                        <div class="help-block text-right">   <a href="">Forget the password ?</a></div>
+                                                    </div>
+                                                    <div class="form-group">  
+                                                        <a href="main.html" type="submit" id="login-btn" value="Login" class="btn btn-primary">Login</a>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox"> keep me logged-in
+                                                        </label>
+                        
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li> <!--End of Login-->     
                         </ul>
                     </div><!-- End of navbar-collapse -->
 
@@ -246,6 +338,61 @@
 
             
         </div><!-- Close main body container-->
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+      
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title">Sign up with Westside Coffee Co. <small>It's free!</small></h3>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address" data-bind="email">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password" data-bind="password">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                    </div>
+                                </div>
+                            </div>
+                               
+                            <a href="#" type="submit" id="signup-btn" value="Register" class="btn btn-info btn-block">Register</a>
+
+                        </form>
+                    </div>
+                    <!--Footer if needed-->
+                    <!-- <div class="modal-footer">
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
 
         <h1 class="store-header">Our Store</h1>
         
@@ -442,6 +589,12 @@
             <p id="copyright-text"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Copyright Westside Coffee Co.</p>
     </footer> <!-- End of Footer-->
 
+    <!-- Link the JS files (They should always be at the bottom Dustin!)-->
+        <!-- Latest jQuery file (goes above the JS file) (source: https://developers.google.com/speed/libraries/#jquery)-->
+        <script src="javascript/app/jquery-1.12.1.min.js"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="javascript/app/bootstrap.min.js"></script>
     <!-- Latest jQuery file (goes above the JS file) (source: https://developers.google.com/speed/libraries/#jquery)-->
     <script src="js/jquery-1.12.1.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->

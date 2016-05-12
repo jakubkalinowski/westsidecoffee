@@ -14,7 +14,7 @@
         <!-- Social Media Buttons (Font-Awesome)-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
         <!-- Added CSS file -->
-        <link rel="stylesheet" href="stylesheet/style.css">
+        <!-- <link rel="stylesheet" href="stylesheet/style.css"> -->
 
         <title>Westside Coffee Co.</title>
        
@@ -418,7 +418,7 @@
                             
                             <li class="text-border"><a ng-click="mainVm.navigationTo('orders')" href="orderAhead.html">Order Ahead</a></li>
                             
-                            <li><a href="store.html">Store</a></li>
+                            <li><a href="store.html" ng-click="mainVm.navigationTo('store')">Store</a></li>
                             
                             <li class="dropdown" ng-controller="mainController as mainVm">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help</span></a>
@@ -469,12 +469,7 @@
                                                         <label>
                                                             <input type="checkbox"> keep me logged-in
                                                         </label>
-                                                    </div>
-                                                    <div class="Administrator-login">
-                                                        <button class="button button--isi button--border-thin button--size-s button--round-s" ng-click="mainVm,navigationTo('authenticated')">
-                                                            <i class="fa fa-user-secret fa-2x"></i>
-                                                            <span>Authenticated</span>
-                                                        </button>
+                        
                                                     </div>
                                                 </form>
                                             </div>

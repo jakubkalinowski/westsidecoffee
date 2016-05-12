@@ -22,6 +22,64 @@
     <!-- Start of Custom style-->
     <style>
 
+            /*--Login style--*/
+            #login-dp{
+                min-width: 250px;
+                padding: 14px 14px 0;
+                overflow:hidden;
+                background-color:rgba(0,0,0,0.6);
+            }
+            #login-dp .help-block{
+                font-size:12px 
+                color: white;   
+            }
+            #login-dp .bottom{
+                background-color:rgba(0,0,0,0.6);
+                border-top:1px solid #ddd;
+                clear:both;
+                padding:14px;
+            }
+            #login-dp .social-buttons{
+                margin:12px 0    
+            }
+            #login-dp .social-buttons a{
+                width: 49%;
+            }
+            #login-dp .form-group {
+                margin-bottom: 10px;
+            }
+            .btn-fb{
+                color: #fff;
+                background-color:#3b5998;
+            }
+            .btn-fb:hover{
+                color: #fff;
+                background-color:#496ebc 
+            }
+            .btn-tw{
+                color: #fff;
+                background-color:#55acee;
+            }
+            .btn-tw:hover{
+                color: #fff;
+                background-color:#59b5fa;
+            }
+            @media(max-width:768px){
+                #login-dp{
+                    background-color: inherit;
+                    color: #fff;
+                }
+                #login-dp .bottom{
+                    background-color: inherit;
+                    border-top:0 none;
+                }
+            }
+            /* End of login style*/
+
+            .modal-title {
+                color: black;
+            }
+
             body {
                 background:#996633;
             }
@@ -274,12 +332,123 @@
 		  border-radius: 0px;
 		}
 
+        .panel {
+            margin-top: 100px;
+        }
+
 	</style><!-- End of Custom style-->
         
 </head> <!-- End of Head-->
 
-<body>
-	<div class="container">
+<body ng-app="app"><!-- Start Body-->
+
+    <div class="container-fluid">
+
+    <!--Start of NavBar-->
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                
+                <div class="container-fluid">
+                    
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <!--To hode info from screen readers-->
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--3 bars drawn inside of the expand button-->
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        
+                        <!-- Text Logo-->
+                        <a class="navbar-brand" href="index.html" ng-click="mainVm.navigationTo('home')">Westside Coffee Co.</a>
+                        
+                        <!--Logo Icon-->
+                        <!-- <img class="img-content" href="index.html" src="images/logoIcon.png"/> -->
+
+                    </div> <!-- End of navbar-header-->
+
+
+                    <!-- Start navbar-collapse ... Collect items for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- <li class="active"><a href="#">Order Ahead <span class="sr-only">(current)</span></a></li> -->
+                            
+                            <!-- <li><a href="#">Order Ahead <span class="sr-only">(current)</span></a></li> -->
+                            
+                            <li class="text-border"><a ng-click="mainVm.navigationTo('orders')" href="orderAhead.html">Order Ahead</a></li>
+                            
+                            <li><a href="store.html" ng-click="mainVm.navigationTo('store')">Store</a></li>
+                            
+                            <li class="dropdown" ng-controller="mainController as mainVm">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+
+                            <!--Become a Member-->
+                            <!-- <li><a href="signup.html">Become a Member</a></li> -->
+
+                            <!-- SignUp-->
+                            <li><a href="#" id="signup" data-toggle="modal" data-target="#myModal"> Become a Member</a></li>
+
+
+
+                            <!-- Login-->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login</a>
+                                <ul id="login-dp" class="dropdown-menu">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Login via
+                                                <div class="social-buttons" ng-controller="loginController as vm">
+                                                    <a href="#" class="btn btn-fb" ng-click="mainVm,navigationTo('authenticated')"><i class="fa fa-facebook"></i> Facebook</a>
+                                                    <a href="#" class="btn btn-tw" ng-click="vm.googleLogin()" ng-show="!vm.isLoggedIn"><i class="fa fa-twitter"></i> Twitter</a>
+                                                </div>
+                                                or
+                                                <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                    <div class="form-group">
+                                                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                                        <input id="login-email" type="email" class="form-control" placeholder="Email address" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                        <input id="login-password" type="password" class="form-control" placeholder="Password" required>
+                                                        <div class="help-block text-right">   <a href="">Forget the password ?</a></div>
+                                                    </div>
+                                                    <div class="form-group">  
+                                                        <a href="main.html" type="submit" id="login-btn" value="Login" class="btn btn-primary">Login</a>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox"> keep me logged-in
+                                                        </label>
+                        
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li> <!--End of Login-->       
+
+                        </ul>
+                    </div><!-- End of navbar-collapse -->
+
+                </div> <!--End of container-fluid-->
+
+            </nav> <!-- End of NavBar-->
+
+        </div>
+
+
+	<div class="container-fluid">
 	<div class="panel panel-default">
   	<!-- Default panel contents -->
   	<div class="panel-heading">Coffee</div>
